@@ -1,4 +1,5 @@
 import { Pagination, ThemeProvider, createTheme } from "@mui/material"
+
 const darkTheme=createTheme({
     palette:{
         mode:'dark',
@@ -28,7 +29,9 @@ const CustomPagination = ({setPage,numOfPages=10}) =>{
           onChange={(e, page) => handlePageChange(page)}
           hideNextButton
           hidePrevButton
-          color="primary"
+          color="secondary"
+          
+        
         />
     </ThemeProvider>
     </div>

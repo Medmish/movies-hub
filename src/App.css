@@ -3,10 +3,17 @@
 }
 .app{
   min-height: 100vh;
-  background: rgba(0, 0, 0,0.8);
+  /* background-image: url("https://wallpapers.com/images/hd/cool-dark-square-metals-6ckndswkxde679st.jpg"); */
+  /* background-image: url('https://img.freepik.com/free-vector/gradient-hexagonal-background_23-2148954968.jpg?size=626&ext=jpg'); */
+  /* background-image: url('https://img.freepik.com/free-photo/abstract-luxury-soft-red-background-christmas-valentines-layout-designstudioroom-web-template-business-report-with-smooth-circle-gradient-color_1258-101364.jpg?t=st=1711796668~exp=1711800268~hmac=fc00e02fcfb1d85efcfaa3a9fd287811bb0a27eac52c49ad9a26d1e668aaabf7&w=740'); */
+  background-size: cover  ;
+  
+  /* background-image: url('https://img.freepik.com/free-vector/gradient-hexagonal-background_23-2148954968.jpg?size=626&ext=jpg'); */
+  background: rgba(40, 3, 43, 0.8);
   color:rgb(231, 218, 218);
-  padding-top:130px;
+  padding-top:150px;
   padding-bottom: 70px;
+  
 }
 @media(max-width :700px){
   .app{

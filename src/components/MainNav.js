@@ -8,6 +8,7 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import SearchIcon from '@mui/icons-material/Search';
 import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 import TvIcon from '@mui/icons-material/Tv';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function SimpleBottomNavigation() {
    
@@ -18,7 +19,7 @@ export default function SimpleBottomNavigation() {
       if (value===0) navigate("/")
       else if(value===1) navigate("/movies");
       else if(value===2) navigate("/series");
-      else if(value===3) navigate("/search");
+      else if(value===3) navigate("/watchlist");
       
     },[value]);
 
@@ -37,10 +38,10 @@ export default function SimpleBottomNavigation() {
         }}
         style={{ backgroundColor:"black" ,opacity:0.7 }}
       >
-        <BottomNavigationAction style={{color:"white"}} label="Trending" icon={<WhatshotIcon/>} />
-        <BottomNavigationAction style={{color:"white"}} label="Movies" icon={<MovieCreationIcon />} />
-        <BottomNavigationAction style={{color:"white"}} label="T.V series" icon={<TvIcon />} />
-        <BottomNavigationAction style={{color:"white"}} label="search" icon={<SearchIcon />} />
+        <BottomNavigationAction style={{color: value === 0 ? "#a4aeeb" : "white"}} label="Trending" icon={<WhatshotIcon />} />
+                <BottomNavigationAction style={{color: value === 1 ? "#a4aeeb" : "white"}} label="Movies" icon={<MovieCreationIcon />} />
+                <BottomNavigationAction style={{color: value === 2 ? "#a4aeeb" : "white"}} label="T.V series" icon={<TvIcon />} />
+                <BottomNavigationAction style={{color: value === 3 ? "#a4aeeb" : "white"}} label="WatchList" icon={<FavoriteIcon/>} />
 
       </BottomNavigation>
     </Box>

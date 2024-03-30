@@ -8,20 +8,28 @@ import Trending from "./pages/Trending/Trending";
 import Movies from "./pages/Movies/Movies";
 import Search from "./pages/Search/Search";
 import Series from "./pages/Series/Series";
-
-
+import React ,{useState}from 'react'
+import Watchlist from "./pages/Watchlist/Watchlist";
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
+
   return (
    <BrowserRouter> 
-   <Header />
+
+   <Header  onSearch={handleSearch} />
 
     <div className="app">
       <Container>
       <Routes>
-            <Route path="/" element={<Trending/>} exact /> 
-            <Route path="/movies" element={<Movies/>}/>
-            <Route path="/series" element={<Series/>}/>
-            <Route path="/search" element={<Search/>}/>
+            <Route path="/" element={<Trending searchTerm={searchTerm}/>} exact /> 
+            <Route path="/movies" element={<Movies searchTerm={searchTerm}/>}/>
+            <Route path="/series" element={<Series searchTerm={searchTerm}/>}/>
+            <Route path="/watchlist" element={<Watchlist />}/>
       </Routes>
       </Container>
     </div>

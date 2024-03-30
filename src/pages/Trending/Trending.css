@@ -1,6 +1,11 @@
 .trending{
     display:flex;
-     flex-wrap:wrap ; 
+    
+    flex-wrap:wrap ; 
     justify-content: space-around;
 
+}
+.pageTitle{
+    
+    font-weight: 800;
 }

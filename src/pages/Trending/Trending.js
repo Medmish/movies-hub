@@ -4,7 +4,7 @@ import CustomPagination from "../../components/Pagination/CustomPagination";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import { useEffect, useState } from "react";
 const API_KEY='5a38c9aabebe47b32defbed338d1260f';
-const Trending = () => {
+const Trending = ({searchTerm}) => {
     const[page,setPage]=useState(1);
     const [content,setContent] =useState([])
     const fetchTrending =async()=>{
@@ -13,10 +13,26 @@ const Trending = () => {
         setContent(data.results);
        
     };
-     
-    useEffect(()=>{
-        fetchTrending();
-    },[page]);
+    const fetchSearchResults = async () => {
+        try {
+            const { data } = await axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${searchTerm}&page=${page}`);
+            setContent(data.results);
+            // setNumOfPages(data.total_pages);
+        } catch (error) {
+            console.error('Error fetching search results for Trending:', error);
+        }
+    };
+  
+    useEffect(() => {
+        window.scroll(0, 0);
+        if (searchTerm.trim() === '') {
+           setPage(1);
+            fetchTrending();
+        } else {
+            fetchSearchResults();
+        }
+    }, [ page, searchTerm]);
+    
 
     return(
      <div>
