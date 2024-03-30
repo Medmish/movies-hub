@@ -107,7 +107,7 @@ const SingleContent =({
                     <div className="title">{title}</div>
                     <div className="info">
                         <span className="subtitle">{media_type === "tv" ? "TV Series" : "Movie"}</span>
-                        <span className="subtitle">{vote_average.toFixed(1)}⭐</span>
+                        <span className="subtitle">{vote_average ? vote_average.toFixed(1) : 'N/A'}⭐</span>
                     </div>
                 </ContentModal>
             )}

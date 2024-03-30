@@ -6,7 +6,6 @@ import SimpleBottomNavigation from "./components/MainNav"
 import { Container, Switch } from "@mui/material";
 import Trending from "./pages/Trending/Trending";
 import Movies from "./pages/Movies/Movies";
-import Search from "./pages/Search/Search";
 import Series from "./pages/Series/Series";
 import React ,{useState}from 'react'
 import Watchlist from "./pages/Watchlist/Watchlist";

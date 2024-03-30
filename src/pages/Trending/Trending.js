@@ -31,7 +31,7 @@ const Trending = ({searchTerm}) => {
         } else {
             fetchSearchResults();
         }
-    }, [ page, searchTerm]);
+    }, [page, searchTerm]);
     
 
     return(
